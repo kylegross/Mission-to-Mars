@@ -77,7 +77,7 @@ def mars_facts():
         df = pd.read_html('http://space-facts.com/mars/')[0]
     except BaseException:
         return None
-    df.columns=['description', 'mars']
+    df.columns=['description', 'class']
     df.set_index('description', inplace=True)
 
     # Convert dataframe into HTML format, add bootstrap
