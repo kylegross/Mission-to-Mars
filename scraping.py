@@ -72,13 +72,13 @@ def featured_image(browser):
     
     return img_url
 
-def mars_facts():
+def mars_facts(browser):
     try:
         df = pd.read_html('http://space-facts.com/mars/')[0]
     except BaseException:
         return None
-    df.columns=['description', 'class']
-    df.set_index('description', inplace=True)
+    df.columns=['Description', 'Mars']
+    df.set_index('Description', inplace=True)
 
     # Convert dataframe into HTML format, add bootstrap
     return df.to_html(classes="table table-striped")
